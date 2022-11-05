@@ -13,7 +13,7 @@ import java.nio.file.StandardOpenOption;
 public class MyController {
 
     @RequestMapping("/index")
-    public String player(@RequestParam (value = "Username") String Username) {
+    public String Player(@RequestParam (value = "Username") String Username) {
         try {
             Files.write(Paths.get("myList.txt"), ("\n" + Username).getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
