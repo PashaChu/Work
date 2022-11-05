@@ -13,7 +13,7 @@ public class TimeTable {
 
 
 
-    public void Menu(){
+    public void menu(){
         System.out.print("< Меню для составления расписания >");
         System.out.println("< 1.Вписать преподавателя >");
         System.out.println("< 2.Вывести списко преподавателей >");
