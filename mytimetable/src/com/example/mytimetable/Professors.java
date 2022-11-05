@@ -11,7 +11,7 @@ public class Professors {
         object = new String[3];
     }
 
-    public void Create_list(Professors p){
+    public void сreate_list(Professors p){
         p.teachers_not_file();
         p.teachers_file();
         p.print();
