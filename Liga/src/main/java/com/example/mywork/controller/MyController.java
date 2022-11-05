@@ -10,10 +10,10 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 @Controller
-public class MyController {
+public class mycontroller {
 
     @RequestMapping("/index")
-    public String Player(@RequestParam (value = "Username") String Username) {
+    public String player(@RequestParam (value = "Username") String Username) {
         try {
             Files.write(Paths.get("myList.txt"), ("\n" + Username).getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
