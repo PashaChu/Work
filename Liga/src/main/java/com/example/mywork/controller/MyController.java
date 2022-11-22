@@ -10,7 +10,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 @Controller
-public class mycontroller {
+public class MyController {
 
     @RequestMapping("/index")
     public String player(@RequestParam (value = "Username") String Username) {
@@ -19,15 +19,13 @@ public class mycontroller {
         } catch (IOException e) {
 
         }
-        return "List";
+        return "list";
     }
 
-    @RequestMapping("/List")
+    @RequestMapping("/list")
     public ModelAndView index () {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("List");
+        modelAndView.setViewName("list");
         return modelAndView;
     }
-
-
 }
