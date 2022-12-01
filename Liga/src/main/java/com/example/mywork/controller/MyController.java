@@ -18,8 +18,8 @@ public class MyController {
     @RequestMapping("/index")
     public String player(@RequestParam (value = "Username") String Username) {
         try {
-            Set<String> str = new HashSet<>();
-            save(str, "myList.txt", Username);
+                Set<String> str = new HashSet<>();
+                save(str, "myList.txt", Username);
             } catch (Exception e) { }
         return "list";
     }
@@ -68,8 +68,6 @@ public class MyController {
                 line = reader.readLine();
                 list.add(i++, line);
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
