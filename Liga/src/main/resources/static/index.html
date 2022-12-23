@@ -1,34 +1,13 @@
 <!DOCTYPE html>
-<html lang = 'ru'>
+<html lang = 'ru' xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="UTF-8">
         <link rel = "stylesheet" href = ".\style.css">
         <title>Moba-игра</title>
     </head>
     <body>
-		<script>
-			document.addEventListener('DOMContentLoaded', () => {
-				const getSort = ({target}) => {
-					const order = (target.dataset.order = -(target.dataset.order || -1));
-					const index = [...target.parentNode.cells].indexOf(target);
-					const collator = new Intl.Collator(['en', 'ru'], { numeric: true });
-					const comparator = (index, order) => (a, b) => order * collator.compare(
-						a.children[index].innerHTML,
-						b.children[index].innerHTML
-					);
-	
-	
-					for(const tBody of target.closest('table').tBodies)
-						tBody.append(...[...tBody.rows].sort(comparator(index, order)));
-	
-					for(const cell of target.parentNode.cells)
-						cell.classList.toggle('sorted', cell === target);
-		
-				};
-				document.querySelectorAll('.table_sort thead').forEach(tableTH => tableTH.addEventListener('click', () => getSort(event)));
-			});
-		</script>
-		
+        <script scr="fetch.js"></script>
+		<script scr="myscript.js"></script>
         <header class="header">
             <div class="container">
                 <div class="header__inner">
@@ -57,7 +36,7 @@
 				</thead>
                 <tr>
                     <td class="green">
-                        <form action = "./index" method = "POST">
+                        <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "Saske" readonly>
                             <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
                         </form>
@@ -80,7 +59,7 @@
                 </tr>
                 <tr>
                     <td class="green">
-                        <form action = "./index" method = "POST">
+                        <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "CopLya" readonly>
                             <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
                         </form>
@@ -103,7 +82,7 @@
                 </tr>
                 <tr>
                     <td class="green">
-                        <form action = "./index" method = "POST">
+                        <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "AldUin" readonly>
                             <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
                         </form>
@@ -126,7 +105,7 @@
                 </tr>
                 <tr>
                     <td class="green">
-                        <form action = "./index" method = "POST">
+                        <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "Gogo" readonly>
                             <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
                         </form>
@@ -149,7 +128,7 @@
                 </tr>
                 <tr>
                     <td class="green">
-                        <form action = "./index" method = "POST">
+                        <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "HashuNaMore" readonly>
                             <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
                         </form>
@@ -172,7 +151,7 @@
                 </tr>
                 <tr>
                     <td class="red">
-                        <form action = "./index" method = "POST">
+                        <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "Wow" readonly>
                             <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
                         </form>
@@ -195,7 +174,7 @@
                 </tr>
                 <tr>
                     <td class="red">
-                        <form action = "./index" method = "POST">
+                        <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "1769HH" readonly>
                             <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
                         </form>
@@ -218,7 +197,7 @@
                 </tr>
                 <tr>
                     <td class="red">
-                        <form action = "./index" method = "POST">
+                        <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "Errora" readonly>
                             <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
                         </form>
@@ -241,7 +220,7 @@
                 </tr>
                 <tr>
                     <td class="red">
-                        <form action = "./index" method = "POST">
+                        <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "Vlad" readonly>
                             <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
                         </form>
@@ -264,7 +243,7 @@
                 </tr>
                 <tr>
                     <td class="red">
-                        <form action = "./index" method = "POST">
+                        <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "Maksim2008" readonly>
                             <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
                         </form>
@@ -286,6 +265,9 @@
                     <td class="red">11 / 12 / 5</td>
                 </tr>
                 </table>
-        </div>		
+        </div>
+        <div class="content_post open-popup" onclick="showPopup(this)" th:each="post: ${player}">
+            <p th:text="${post}"></p>
+        </div>
     </body>
 </html>
