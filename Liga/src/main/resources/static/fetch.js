@@ -1,7 +1,6 @@
 function sendRequest(){
-    return fetch('http://localhost:8080/index', {method: 'GET'})
-        .then(response => {
-            return response.json()
-
-        })
+    return fetch.setAttribute('http://localhost:8080/')
+        .then(response => response.json())
+        .then(result => response.ok)
+        .catch (throw new Error('Ошибка по адресу ' + ${url} + ' статус ошибки ' + response.status))
 }

@@ -19,6 +19,7 @@ public class AjaxController {
             List<String> player = new ArrayList<>();
             player.add(Username);
             String str = "Игрок " + Username + " уже был отмечен.";
+            String str1 = "Игрока нет в списке";
             try {
                 File file = new File("myList.txt");
                 FileReader fr = new FileReader(file);
@@ -28,12 +29,14 @@ public class AjaxController {
                     line = reader.readLine();
                     if(player.toString() == line){
                         model.addAttribute("player", str);
+                    } else {
+                        model.addAttribute("player", str1);
                     }
                 }
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            return "list";
+            return "index";
         }
     }
 }

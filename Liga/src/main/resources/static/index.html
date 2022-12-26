@@ -4,10 +4,9 @@
         <meta charset="UTF-8">
         <link rel = "stylesheet" href = ".\style.css">
         <title>Moba-игра</title>
+        <script src="myscript.js"></script>
     </head>
     <body>
-        <script scr="fetch.js"></script>
-		<script scr="myscript.js"></script>
         <header class="header">
             <div class="container">
                 <div class="header__inner">
@@ -36,238 +35,199 @@
 				</thead>
                 <tr>
                     <td class="green">
-                        <form action = "./index" method = "POST" name="myForm">
+                        <form action = "./index" method = "POST">
                             <input class = "TextWindow" name = "Username" value = "Saske" readonly>
-                            <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
                         </form>
+                        <button type="button" class = "button" border="0" onclick="sendRequest()">Проверка</button>
                     </td>
                     <td class="green">Алистар</td>
-                    <td class="green"><div class="popup">
-<img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
-
-<img src=".\Health_Potion_item.png" title = "Зелье здоровья">
-
-<img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
-
-<img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
-
-<img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
-
-<img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
-</div></td>
+                    <td class="green">
+                        <div class="popup">
+                            <img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
+                            <img src=".\Health_Potion_item.png" title = "Зелье здоровья">
+                            <img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
+                            <img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
+                            <img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
+                            <img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
+                        </div></td>
                    <td class="green">9 / 8 / 9</td>
                 </tr>
                 <tr>
                     <td class="green">
                         <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "CopLya" readonly>
-                            <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
                         </form>
                     </td>
                     <td class="green">Ари</td>
-                    <td class="green"><div class="popup">
-<img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
-
-<img src=".\Health_Potion_item.png" title = "Зелье здоровья">
-
-<img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
-
-<img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
-
-<img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
-
-<img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
-</div></td>
+                    <td class="green">
+                        <div class="popup">
+                            <img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
+                            <img src=".\Health_Potion_item.png" title = "Зелье здоровья">
+                            <img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
+                            <img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
+                            <img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
+                            <img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
+                        </div></td>
                     <td class="green">8 / 5 / 15</td>
                 </tr>
                 <tr>
                     <td class="green">
                         <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "AldUin" readonly>
-                            <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
                         </form>
                     </td>
                     <td class="green">Аурелион Сол</td>
-                    <td class="green"><div class="popup">
-<img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
-
-<img src=".\Health_Potion_item.png" title = "Зелье здоровья">
-
-<img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
-
-<img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
-
-<img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
-
-<img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
-</div></td>
+                    <td class="green">
+                        <div class="popup">
+                            <img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
+                            <img src=".\Health_Potion_item.png" title = "Зелье здоровья">
+                            <img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
+                            <img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
+                            <img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
+                            <img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
+                        </div></td>
                     <td class="green">7 / 9 / 4</td>
                 </tr>
                 <tr>
                     <td class="green">
                         <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "Gogo" readonly>
-                            <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
                         </form>
                     </td>
                     <td class="green">Вай</td>
-                    <td class="green"><div class="popup">
-<img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
-
-<img src=".\Health_Potion_item.png" title = "Зелье здоровья">
-
-<img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
-
-<img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
-
-<img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
-
-<img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
-</div></td>
+                    <td class="green">
+                        <div class="popup">
+                            <img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
+                            <img src=".\Health_Potion_item.png" title = "Зелье здоровья">
+                            <img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
+                            <img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
+                            <img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
+                            <img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
+                        </div></td>
                     <td class="green">10 / 8 / 14</td>
                 </tr>
                 <tr>
                     <td class="green">
                         <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "HashuNaMore" readonly>
-                            <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
                         </form>
                     </td>
                     <td class="green">Варвик</td>
-                    <td class="green"><div class="popup">
-<img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
-
-<img src=".\Health_Potion_item.png" title = "Зелье здоровья">
-
-<img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
-
-<img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
-
-<img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
-
-<img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
-</div></td>
+                    <td class="green">
+                        <div class="popup">
+                            <img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
+                            <img src=".\Health_Potion_item.png" title = "Зелье здоровья">
+                            <img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
+                            <img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
+                            <img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
+                            <img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
+                        </div></td>
                     <td class="green">5 / 8 / 6</td>
                 </tr>
                 <tr>
                     <td class="red">
                         <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "Wow" readonly>
-                            <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
                         </form>
                     </td>
                     <td class="red">Галио</td>
-                    <td class="red"><div class="popup">
-<img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
-
-<img src=".\Health_Potion_item.png" title = "Зелье здоровья">
-
-<img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
-
-<img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
-
-<img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
-
-<img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
-</div></td>
+                    <td class="red">
+                        <div class="popup">
+                            <img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
+                            <img src=".\Health_Potion_item.png" title = "Зелье здоровья">
+                            <img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
+                            <img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
+                            <img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
+                            <img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
+                        </div></td>
                     <td class="red">2 / 10 / 5</td>
                 </tr>
                 <tr>
                     <td class="red">
                         <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "1769HH" readonly>
-                            <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
                         </form>
                     </td>
                     <td class="red">Дариус</td>
-                    <td class="red"> <div class="popup">
-<img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
-
-<img src=".\Health_Potion_item.png" title = "Зелье здоровья">
-
-<img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
-
-<img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
-
-<img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
-
-<img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
-</div></td>
+                    <td class="red">
+                        <div class="popup">
+                            <img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
+                            <img src=".\Health_Potion_item.png" title = "Зелье здоровья">
+                            <img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
+                            <img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
+                            <img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
+                            <img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
+                        </div></td>
                     <td class="red">12 / 10 / 11</td>
                 </tr>
                 <tr>
                     <td class="red">
                         <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "Errora" readonly>
-                            <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
                         </form>
                     </td>
                     <td class="red">Джакс</td>
-                    <td class="red"> <div class="popup">
-<img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
-
-<img src=".\Health_Potion_item.png" title = "Зелье здоровья">
-
-<img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
-
-<img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
-
-<img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
-
-<img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
-</div></td>
+                    <td class="red">
+                        <div class="popup">
+                            <img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
+                            <img src=".\Health_Potion_item.png" title = "Зелье здоровья">
+                            <img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
+                            <img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
+                            <img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
+                            <img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
+                        </div></td>
                     <td class="red">6 / 1 / 5</td>
                 </tr>
                 <tr>
                     <td class="red">
                         <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "Vlad" readonly>
-                            <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
                         </form>
                     </td>
                     <td class="red">Дрейвен</td>
-                    <td class="red"> <div class="popup">
-<img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
-
-<img src=".\Health_Potion_item.png" title = "Зелье здоровья">
-
-<img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
-
-<img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
-
-<img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
-
-<img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
-</div></td>
+                    <td class="red">
+                        <div class="popup">
+                            <img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
+                            <img src=".\Health_Potion_item.png" title = "Зелье здоровья">
+                            <img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
+                            <img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
+                            <img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
+                            <img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
+                        </div></td>
                     <td class="red">7 / 6 / 19</td>
                 </tr>
                 <tr>
                     <td class="red">
                         <form action = "./index" method = "POST" name="myForm">
                             <input class = "TextWindow" name = "Username" value = "Maksim2008" readonly>
-                            <input type="image"  class = "button" name = "picture" src="Like.png" border="0" alt="Submit" />
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
                         </form>
                     </td>
                     <td class="red">Джинкс</td>
-                    <td class="red"> <div class="popup">
-<img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
-
-<img src=".\Health_Potion_item.png" title = "Зелье здоровья">
-
-<img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
-
-<img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
-
-<img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
-
-<img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
-</div></td>
+                    <td class="red">
+                        <div class="popup">
+                            <img src=".\Stealth_Ward_item.png" title = "Скрытый тотем">
+                            <img src=".\Health_Potion_item.png" title = "Зелье здоровья">
+                            <img src=".\Boots_of_Swiftness_item.png" title = "Ботинки стремительности">
+                            <img src=".\Farsight_Alteration_item.png" title = "Всевидящая альтернатива">
+                            <img src=".\Corrupting_Potion_item.png" title = "Вредоносное средство">
+                            <img src=".\Refillable_Potion_item.png" title = "Пополняемое зелье">
+                        </div></td>
                     <td class="red">11 / 12 / 5</td>
                 </tr>
                 </table>
-        </div>
-        <div class="content_post open-popup" onclick="showPopup(this)" th:each="post: ${player}">
-            <p th:text="${post}"></p>
+                <div class="content_post open-popup" onclick="showPopup(this)" th:each="post: ${player}">
+                    <p th:text="${post}"></p>
+                </div>
         </div>
     </body>
 </html>

@@ -161,9 +161,20 @@ td {
 
 /*Likes*/
 
-.button {
+.buttonForm {
 	width: 25px;
     background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.button {
+    width: 70px;
+    height: 25px;
+    background-color: blue;
     background-repeat: no-repeat;
     border: none;
     cursor: pointer;
