@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-@Controller
+@RestController
 public class MyController {
     @RequestMapping(value = "/index", method = RequestMethod.POST)
     public String player(@RequestParam (value = "Username") String Username) {

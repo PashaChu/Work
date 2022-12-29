@@ -1,13 +1,16 @@
 package com.example.mywork.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.io.*;
 
 @RestController
 public class AjaxController {
     @RequestMapping(value = "/like", method = RequestMethod.POST)
-    public String list(@RequestParam(value = "Username") String Username) {
+    public void list(@RequestParam(value = "Username") String Username) {
         try {
             File file = new File("myList.txt");
             FileReader fr = new FileReader(file);
@@ -16,16 +19,16 @@ public class AjaxController {
             while (line != null) {
                 line = reader.readLine();
                 if(line.equals(Username)){
-                    return "Игрок уже есть в списке.";
+                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
                 }
             }
             if(line == null){
-                return "Игрок записан.";
+                throw new ResponseStatusException(HttpStatus.OK);
             }
         } catch (IOException e) {
             e.printStackTrace();
         } catch (Exception e) { }
-        return "Игрок записан.";
+        throw new ResponseStatusException(HttpStatus.OK);
     }
 }
 
