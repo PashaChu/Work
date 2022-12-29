@@ -4,7 +4,7 @@ function sendForm(event) {
         method: 'POST',
         body: event.target.previousElementSibling.value
     }).then(response =>{
-        if(response.ok){
+        if(response.status == 200){
             const action = fetch('http://localhost:8080/index', {
                 method: 'POST',
                 body: event.target.previousElementSibling.value

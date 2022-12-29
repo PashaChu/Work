@@ -12,12 +12,11 @@ import java.util.Set;
 @RestController
 public class MyController {
     @RequestMapping(value = "/index", method = RequestMethod.POST)
-    public String player(@RequestBody String Username) {
+    public void player(@RequestBody String Username) {
         try {
                 Set<String> str = new HashSet<>();
                 save(str, "myList.txt", Username);
             } catch (Exception e) { }
-        return "list";
     }
 
     public static void save(Set<String> obj, String path, String un) throws Exception{
@@ -50,25 +49,6 @@ public class MyController {
         writer.close();
     }
 
-    @RequestMapping(value = "/list", method= RequestMethod.GET)
-    public String readmodel(Model model) {
-        ArrayList<String> list = new ArrayList<String>();
-        try {
-            File file = new File("myList.txt");
-            FileReader fr = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fr);
-            String line = reader.readLine();
-            int i = 0;
-            list.add(i, line);
-            while (line != null) {
-                line = reader.readLine();
-                list.add(i++, line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        model.addAttribute("posts", list);
-        return "list";
-    }
+
 
 }

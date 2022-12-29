@@ -1,6 +1,7 @@
 package com.example.mywork.controller;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -19,7 +20,7 @@ public class AjaxController {
             while (line != null) {
                 line = reader.readLine();
                 if(line.equals(Username)){
-                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Игрок уже был записан.");
+                    throw new ResponseStatusException(HttpStatus.CONFLICT);
                 }
             }
             if(line == null){
