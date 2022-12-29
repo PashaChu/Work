@@ -10,7 +10,7 @@ import java.io.*;
 @RestController
 public class AjaxController {
     @RequestMapping(value = "/like", method = RequestMethod.POST)
-    public void list(@RequestParam(value = "Username") String Username) {
+    public void list(@RequestBody String Username) {
         try {
             File file = new File("myList.txt");
             FileReader fr = new FileReader(file);
@@ -19,7 +19,7 @@ public class AjaxController {
             while (line != null) {
                 line = reader.readLine();
                 if(line.equals(Username)){
-                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+                    throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Игрок уже был записан.");
                 }
             }
             if(line == null){
@@ -31,4 +31,5 @@ public class AjaxController {
         throw new ResponseStatusException(HttpStatus.OK);
     }
 }
+
 

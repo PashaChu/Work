@@ -12,7 +12,7 @@ import java.util.Set;
 @RestController
 public class MyController {
     @RequestMapping(value = "/index", method = RequestMethod.POST)
-    public String player(@RequestParam (value = "Username") String Username) {
+    public String player(@RequestBody String Username) {
         try {
                 Set<String> str = new HashSet<>();
                 save(str, "myList.txt", Username);
