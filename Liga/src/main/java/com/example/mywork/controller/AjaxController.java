@@ -1,42 +1,31 @@
 package com.example.mywork.controller;
 
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.io.*;
 
+@RestController
 public class AjaxController {
-
-    @RestController
-    public class ProductController {
-        @RequestMapping(value = "/index", method= RequestMethod.GET)
-        public String list(@RequestParam (value = "Username") String Username, Model model){
-            List<String> player = new ArrayList<>();
-            player.add(Username);
-            String str = "Игрок " + Username + " уже был отмечен.";
-            String str1 = "Игрока нет в списке";
-            try {
-                File file = new File("myList.txt");
-                FileReader fr = new FileReader(file);
-                BufferedReader reader = new BufferedReader(fr);
-                String line = reader.readLine();
-                while (line != null) {
-                    line = reader.readLine();
-                    if(player.toString() == line){
-                        model.addAttribute("player", str);
-                    } else {
-                        model.addAttribute("player", str1);
-                    }
+    @RequestMapping(value = "/like", method = RequestMethod.POST)
+    public String list(@RequestParam(value = "Username") String Username) {
+        try {
+            File file = new File("myList.txt");
+            FileReader fr = new FileReader(file);
+            BufferedReader reader = new BufferedReader(fr);
+            String line = reader.readLine();
+            while (line != null) {
+                line = reader.readLine();
+                if(line.equals(Username)){
+                    return "Игрок уже есть в списке.";
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
             }
-            return "index";
-        }
+            if(line == null){
+                return "Игрок записан.";
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) { }
+        return "Игрок записан.";
     }
 }
+

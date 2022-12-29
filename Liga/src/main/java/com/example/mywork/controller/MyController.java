@@ -4,7 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -12,8 +11,7 @@ import java.util.Set;
 
 @Controller
 public class MyController {
-
-    @RequestMapping("/index")
+    @RequestMapping(value = "/index", method = RequestMethod.POST)
     public String player(@RequestParam (value = "Username") String Username) {
         try {
                 Set<String> str = new HashSet<>();

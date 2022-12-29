@@ -7,6 +7,7 @@
         <script src="myscript.js"></script>
     </head>
     <body>
+    <script src="fetch.js"></script>
         <header class="header">
             <div class="container">
                 <div class="header__inner">
@@ -35,11 +36,10 @@
 				</thead>
                 <tr>
                     <td class="green">
-                        <form action = "./index" method = "POST">
-                            <input class = "TextWindow" name = "Username" value = "Saske" readonly>
-                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
+                        <form action="./index" onsubmit="sendForm(event)" method="post">
+                            <input class="TextWindow" type="text"  name="Username" value="Saske" readonly>
+                            <input type="image" class = "buttonForm" name = "picture" src="Like.png" border="0" />
                         </form>
-                        <button type="button" class = "button" border="0" onclick="sendRequest()">Проверка</button>
                     </td>
                     <td class="green">Алистар</td>
                     <td class="green">
@@ -55,7 +55,7 @@
                 </tr>
                 <tr>
                     <td class="green">
-                        <form action = "./index" method = "POST" name="myForm">
+                        <form action="./index" onsubmit="sendForm(event)" method="post">
                             <input class = "TextWindow" name = "Username" value = "CopLya" readonly>
                             <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
                         </form>
@@ -74,9 +74,9 @@
                 </tr>
                 <tr>
                     <td class="green">
-                        <form action = "./index" method = "POST" name="myForm">
+                        <form action="./index" onsubmit="sendForm(event)" method="post">
                             <input class = "TextWindow" name = "Username" value = "AldUin" readonly>
-                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" />
                         </form>
                     </td>
                     <td class="green">Аурелион Сол</td>
@@ -93,9 +93,9 @@
                 </tr>
                 <tr>
                     <td class="green">
-                        <form action = "./index" method = "POST" name="myForm">
+                        <form action="./index" onsubmit="sendForm(event)" method="post">
                             <input class = "TextWindow" name = "Username" value = "Gogo" readonly>
-                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0"/>
                         </form>
                     </td>
                     <td class="green">Вай</td>
@@ -112,9 +112,9 @@
                 </tr>
                 <tr>
                     <td class="green">
-                        <form action = "./index" method = "POST" name="myForm">
+                        <form action="./index" onsubmit="sendForm(event)" method="post">
                             <input class = "TextWindow" name = "Username" value = "HashuNaMore" readonly>
-                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" />
                         </form>
                     </td>
                     <td class="green">Варвик</td>
@@ -131,9 +131,9 @@
                 </tr>
                 <tr>
                     <td class="red">
-                        <form action = "./index" method = "POST" name="myForm">
+                        <form action="./index" onsubmit="sendForm(event)" method="post">
                             <input class = "TextWindow" name = "Username" value = "Wow" readonly>
-                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" />
                         </form>
                     </td>
                     <td class="red">Галио</td>
@@ -150,9 +150,9 @@
                 </tr>
                 <tr>
                     <td class="red">
-                        <form action = "./index" method = "POST" name="myForm">
+                        <form action="./index" onsubmit="sendForm(event)" method="post">
                             <input class = "TextWindow" name = "Username" value = "1769HH" readonly>
-                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" />
                         </form>
                     </td>
                     <td class="red">Дариус</td>
@@ -169,9 +169,9 @@
                 </tr>
                 <tr>
                     <td class="red">
-                        <form action = "./index" method = "POST" name="myForm">
+                        <form action="./index" onsubmit="sendForm(event)" method="post">
                             <input class = "TextWindow" name = "Username" value = "Errora" readonly>
-                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" />
                         </form>
                     </td>
                     <td class="red">Джакс</td>
@@ -188,9 +188,9 @@
                 </tr>
                 <tr>
                     <td class="red">
-                        <form action = "./index" method = "POST" name="myForm">
+                        <form action="./index" onsubmit="sendForm(event)" method="post">
                             <input class = "TextWindow" name = "Username" value = "Vlad" readonly>
-                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" />
                         </form>
                     </td>
                     <td class="red">Дрейвен</td>
@@ -207,9 +207,9 @@
                 </tr>
                 <tr>
                     <td class="red">
-                        <form action = "./index" method = "POST" name="myForm">
+                        <form action="./index" onsubmit="sendForm(event)" method="post">
                             <input class = "TextWindow" name = "Username" value = "Maksim2008" readonly>
-                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" alt="Submit"/>
+                            <input type="image"  class = "buttonForm" name = "picture" src="Like.png" border="0" />
                         </form>
                     </td>
                     <td class="red">Джинкс</td>
@@ -225,9 +225,7 @@
                     <td class="red">11 / 12 / 5</td>
                 </tr>
                 </table>
-                <div class="content_post open-popup" onclick="showPopup(this)" th:each="post: ${player}">
-                    <p th:text="${post}"></p>
-                </div>
+
         </div>
     </body>
 </html>
