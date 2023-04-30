@@ -1,22 +1,26 @@
+
 function sendForm(event) {
- let player = event.target.Username.value
- let url1 = 'http://localhost:8080/like'
- let url2 = 'http://localhost:8080/index'
-    fetch(url1,{
-        method: "post",
-        body: player
-    }).then((response) =>
-    function(response){
-        if(response.ok){
-            const action = fetch(url2, {
-                method: "post",
-                body: player
-            }).then(response => response.json())
-            alert("Игрок записан.")
-            return
+    fetch('http://localhost:8080/like',{
+        method: 'POST',
+        body: event.target.previousElementSibling.value
+    }).then(response =>{
+        if(response.status == 200){
+            requestFetch(event);
         } else {
             alert("Нельзя добавить игрока, он уже там!")
-            return
+        }
+    })
+}
+
+async function requestFetch(event){
+    const action = await fetch('http://localhost:8080/index', {
+        method: 'POST',
+        body: event.target.previousElementSibling.value
+    }).then(response => {
+        if(response.status == 200){
+            alert("Игрок записан.")
+        } else {
+            alert("Ошибка: " + response.status)
         }
     })
 }
