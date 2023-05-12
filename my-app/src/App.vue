@@ -24,16 +24,16 @@
             <table class="table_sort" align="center">
               <thead>
                   <tr>
-                      <td class="head">Игроки</td>
-                      <td class="head">Герои</td>
-                      <td class="head">Закуп</td>
-                      <td class="head">KDA</td>
+                      <td class="head" v-on:click="sort()">Игроки</td>
+                      <td class="head" v-on:click="sort()">Герои</td>
+                      <td class="head" v-on:click="sort()">Закуп</td>
+                      <td class="head" v-on:click="sort()">KDA</td>
                   </tr>
               </thead>
               <tr>
                   <td class="green">
                       <input class="TextWindow" type="text"  name="Username" value="Saske222" readonly>
-                      <input type="image" class="buttonForm" name="picture" src="Like.png" border="0" onclick="sendForm(event)"/>
+                      <input type="image" class="buttonForm" name="picture" src=".\Like.png" border="0" v-on:click="sendForm(event)"/>
                   </td>
                   <td class="green">Алистар</td>
                   <td class="green">
@@ -50,7 +50,7 @@
               <tr>
                   <td class="green">
                       <input  class="TextWindow" type="text"  name="Username" value="CopLya" readonly>
-                      <input type="image" class="buttonForm" name="picture" src="Like.png" border="0" onclick="sendForm(event)"/>
+                      <input type="image" class="buttonForm" name="picture" src=".\Like.png" border="0" v-on:click="sendForm(event)"/>
                   </td>
                   <td class="green">Ари</td>
                   <td class="green">
@@ -67,7 +67,7 @@
               <tr>
                   <td class="green">
                       <input class="TextWindow" type="text"  name="Username" value="AldUin" readonly>
-                      <input type="image" class="buttonForm" name="picture" src="Like.png" border="0" onclick="sendForm(event)"/>
+                      <input type="image" class="buttonForm" name="picture" src=".\Like.png" border="0" v-on:click="sendForm(event)"/>
                   </td>
                   <td class="green">Аурелион Сол</td>
                   <td class="green">
@@ -84,7 +84,7 @@
               <tr>
                   <td class="green">
                       <input class="TextWindow" type="text"  name="Username" value="Gogo" readonly>
-                      <input type="image" class="buttonForm" name="picture" src="Like.png" border="0" onclick="sendForm(event)"/>
+                      <input type="image" class="buttonForm" name="picture" src=".\Like.png" border="0" v-on:click="sendForm(event)"/>
                   </td>
                   <td class="green">Вай</td>
                   <td class="green">
@@ -101,7 +101,7 @@
               <tr>
                   <td class="green">
                       <input class="TextWindow" type="text"  name="Username" value="HachuNaMore" readonly>
-                      <input type="image" class="buttonForm" name="picture" src="Like.png" border="0" onclick="sendForm(event)"/>
+                      <input type="image" class="buttonForm" name="picture" src=".\Like.png" border="0" v-on:click="sendForm(event)"/>
                   </td>
                   <td class="green">Варвик</td>
                   <td class="green">
@@ -118,7 +118,7 @@
               <tr>
                   <td class="red">
                       <input class="TextWindow" type="text"  name="Username" value="Wow" readonly>
-                      <input type="image" class="buttonForm" name="picture" src="Like.png" border="0" onclick="sendForm(event)"/>
+                      <input type="image" class="buttonForm" name="picture" src=".\Like.png" border="0" v-on:click="sendForm(event)"/>
                   </td>
                   <td class="red">Галио</td>
                   <td class="red">
@@ -135,7 +135,7 @@
               <tr>
                   <td class="red">
                       <input class="TextWindow" type="text"  name="Username" value="1769HH" readonly>
-                      <input type="image" class="buttonForm" name="picture" src="Like.png" border="0" onclick="sendForm(event)"/>
+                      <input type="image" class="buttonForm" name="picture" src=".\Like.png" border="0" v-on:click="sendForm(event)"/>
                   </td>
                   <td class="red">Дариус</td>
                   <td class="red">
@@ -152,7 +152,7 @@
               <tr>
                   <td class="red">
                       <input class="TextWindow" type="text"  name="Username" value="Errora" readonly>
-                      <input type="image" class="buttonForm" name="picture" src="Like.png" border="0" onclick="sendForm(event)"/>
+                      <input type="image" class="buttonForm" name="picture" src=".\Like.png" border="0" v-on:click="sendForm(event)"/>
                   </td>
                   <td class="red">Джакс</td>
                   <td class="red">
@@ -169,7 +169,7 @@
               <tr>
                   <td class="red">
                       <input class="TextWindow" type="text"  name="Username" value="Vlad" readonly>
-                      <input type="image" class="buttonForm" name="picture" src="Like.png" border="0" onclick="sendForm(event)"/>
+                      <input type="image" class="buttonForm" name="picture" src=".\Like.png" border="0" v-on:click="sendForm(event)"/>
                   </td>
                   <td class="red">Дрейвен</td>
                   <td class="red">
@@ -186,7 +186,7 @@
               <tr>
                   <td class="red">
                       <input class="TextWindow" type="text"  name="Username" value="Maksim2008" readonly>
-                      <input type="image" class="buttonForm" name="picture" src="Like.png" border="0" onclick="sendForm(event)"/>
+                      <input type="image" class="buttonForm" name="picture" src=".\Like.png" border="0" v-on:click="sendForm(event)"/>
                   </td>
                   <td class="red">Джинкс</td>
                   <td class="red">
@@ -206,17 +206,58 @@
 </template>
 
 <script>
-import fetcH from './components/Fetch.vue';
-import scripT from './components/Myscript.vue';
-
 export default {
   name: 'App',
-  components: {fetcH, scripT
-  },
   data() {
     return{
       BackUrl: "http://localhost:8080"
     };
+  }, 
+  methods:{
+    sendForm(event) {
+      fetch('http://localhost:8080/like',{
+          method: 'POST',
+          body: event.target.previousElementSibling.value
+      }).then(response =>{
+          if(response.status == 200){
+              this.requestFetch(event);
+          } else {
+              alert("Нельзя добавить игрока, он уже там!")
+          }
+      })
+    },
+    async requestFetch(event){
+        const action = await fetch('http://localhost:8080/index', {
+            method: 'POST',
+            body: event.target.previousElementSibling.value
+        }).then(response => {
+            if(response.status == 200){
+                alert("Игрок записан.")
+            } else {
+                alert("Ошибка: " + response.status)
+            }
+        })
+        if(action){
+          return;
+        }
+    }, 
+    sort(){
+      document.addEventListener('DOMContentLoaded', () => {
+        const getSort = ({target}) => {
+          const order = (target.dataset.order = -(target.dataset.order || -1));
+          const index = [...target.parentNode.cells].indexOf(target);
+          const collator = new Intl.Collator(['en', 'ru'], { numeric: true });
+          const comparator = (index, order) => (a, b) => order * collator.compare(a.children[index].innerHTML, b.children[index].innerHTML);
+          for(const tBody of target.closest('table').tBodies){
+            tBody.append(...[...tBody.rows].sort(comparator(index, order)));
+            for(const cell of target.parentNode.cells){
+              cell.classList.toggle('sorted', cell === target);
+            }
+          }
+        };
+          document.querySelectorAll('.table_sort thead').forEach(tableTH => tableTH.addEventListener('click', () => getSort(event)));
+      });
+    }
   }
 }
 </script>
