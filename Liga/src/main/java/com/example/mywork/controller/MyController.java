@@ -1,23 +1,19 @@
 package com.example.mywork.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import java.io.*;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
 @RestController
+@CrossOrigin(origins = "http://*:8081")
 public class MyController {
     @RequestMapping(value = "/index", method = RequestMethod.POST)
-    public String player(@RequestParam (value = "Username") String Username) {
+    public void player(@RequestBody String Username) {
         try {
                 Set<String> str = new HashSet<>();
                 save(str, "myList.txt", Username);
             } catch (Exception e) { }
-        return "list";
     }
 
     public static void save(Set<String> obj, String path, String un) throws Exception{
@@ -25,11 +21,12 @@ public class MyController {
         try {
             File file = new File(path);
             FileReader fr = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fr);
-            String line = reader.readLine();
-            while (line != null) {
-               obj.add(line);
-               line = reader.readLine();
+            try (BufferedReader reader = new BufferedReader(fr)) {
+                String line = reader.readLine();
+                while (line != null) {
+                   obj.add(line);
+                   line = reader.readLine();
+                }
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -50,25 +47,6 @@ public class MyController {
         writer.close();
     }
 
-    @RequestMapping(value = "/list", method= RequestMethod.GET)
-    public String readmodel(Model model) {
-        ArrayList<String> list = new ArrayList<String>();
-        try {
-            File file = new File("myList.txt");
-            FileReader fr = new FileReader(file);
-            BufferedReader reader = new BufferedReader(fr);
-            String line = reader.readLine();
-            int i = 0;
-            list.add(i, line);
-            while (line != null) {
-                line = reader.readLine();
-                list.add(i++, line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        model.addAttribute("posts", list);
-        return "list";
-    }
+
 
 }
