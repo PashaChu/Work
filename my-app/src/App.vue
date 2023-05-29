@@ -186,7 +186,7 @@
               <tr>
                   <td class="red">
                       <input class="TextWindow" type="text"  name="Username" value="Maksim2008" readonly>
-                      <input type="image" class="buttonForm" name="picture" src=".\Like.png" border="0" v-on:click="sendForm(event)"/>
+                      <input type="image" class="buttonForm" name="picture" src=".\Like.png" border="0" v-on:click="sendForm"/>
                   </td>
                   <td class="red">Джинкс</td>
                   <td class="red">
@@ -214,10 +214,10 @@ export default {
     };
   }, 
   methods:{
-    sendForm(event) {
+    sendForm: function(event) {
       fetch('http://localhost:8080/like',{
           method: 'POST',
-          body: event.target.previousElementSibling.value
+          body: event
       }).then(response =>{
           if(response.status == 200){
               this.requestFetch(event);
@@ -229,7 +229,7 @@ export default {
     async requestFetch(event){
         const action = await fetch('http://localhost:8080/index', {
             method: 'POST',
-            body: event.target.previousElementSibling.value
+            body: event
         }).then(response => {
             if(response.status == 200){
                 alert("Игрок записан.")
