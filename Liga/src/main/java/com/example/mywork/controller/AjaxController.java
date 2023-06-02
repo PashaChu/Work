@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.Scanner;
 
 @RestController
-@CrossOrigin(origins = "http://*:8081")
+@CrossOrigin(origins = "http://localhost:8081")
 public class AjaxController {
     @RequestMapping(value = "/like", method = RequestMethod.POST)
     @ResponseStatus
