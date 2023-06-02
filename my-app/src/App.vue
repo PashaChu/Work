@@ -348,9 +348,10 @@ export default {
   }
   td {
     background: black;
-    padding: 30px;
+    padding: 50px;
     flex-direction: column;
     flex-basis: 100%;
+    width: 364px;
   }
   /*линия перед таблицей*/
   .buf {
@@ -363,6 +364,7 @@ export default {
   background: aqua;
   color: black;
   cursor: pointer;
+  flex-basis: 100%;
   }
   .green {
   background: green;
@@ -452,7 +454,7 @@ export default {
 
   .TextWindow{
     text-align: center;
-    width: 100px;
+    width: 90px;
     line-height: 28px;
     background:none transparent;
     border: none;
@@ -461,7 +463,5 @@ export default {
   textarea:focus, input:focus {
     color: #0000ff;
   }
-
-  /*flex*/
 
 </style>
