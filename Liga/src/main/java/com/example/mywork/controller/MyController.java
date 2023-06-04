@@ -6,7 +6,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "http://localhost:8080")
 public class MyController {
     @RequestMapping(value = "/index", method = RequestMethod.POST)
     public void player(@RequestBody String Username) {
