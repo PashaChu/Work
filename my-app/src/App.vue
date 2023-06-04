@@ -210,12 +210,12 @@ export default {
   name: 'App',
   data() {
     return{
-      BackUrl: "http://localhost:8080"
+      BackUrl: "http://localhost:8081"
     };
   }, 
   methods:{
     sendForm: function($event) {
-      fetch('http://localhost:8080/like',{
+      fetch('http://localhost:8081/like',{
           method: 'POST',
           body: $event.target.previousElementSibling.value
       }).then(response =>{
@@ -227,7 +227,7 @@ export default {
       })
     },
     async requestFetch($event){
-        const action = await fetch('http://localhost:8080/index', {
+        const action = await fetch('http://localhost:8081/index', {
             method: 'POST',
             body: $event.target.previousElementSibling.value
         }).then(response => {
