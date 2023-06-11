@@ -16,7 +16,7 @@ public class MyController {
             } catch (Exception e) { }
     }
 
-    public static void save(Set<String> obj, String path, String un) throws Exception{
+    public static boolean save(Set<String> obj, String path, String un) throws Exception{
         //1.Считываем все из файла
         try {
             File file = new File(path);
@@ -45,6 +45,7 @@ public class MyController {
             writer.write("\n");
         }
         writer.close();
+        return true;
     }
 
 
