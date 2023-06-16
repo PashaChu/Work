@@ -10,12 +10,19 @@ import java.util.Scanner;
 @CrossOrigin(origins = "http://localhost:8080")
 public class AjaxController {
 
+    private File _list;
+
+    AjaxController(String str){
+        this.setFile(str);
+    }
+
     @RequestMapping(value = "/like", method = RequestMethod.POST)
     @ResponseStatus
     public ResponseEntity<?> list(@RequestBody String Username) {
         try {
-            File file = setFile();
-            FileReader fr = new FileReader(file);
+            String str = "myList.txt";
+            new AjaxController(str);
+            FileReader fr = new FileReader(getFile());
             try (Scanner scanner = new Scanner(fr)) {
                 String line;
                 while (scanner.hasNextLine()) {
@@ -30,7 +37,10 @@ public class AjaxController {
         }
         return new ResponseEntity<>(HttpStatus.OK);
     }
-    public File setFile() {
-        return new File("myList.txt");
+    public void setFile(String str) {
+        this._list = new File(str);
+    }
+    public File getFile(){
+        return null;
     }
 }
