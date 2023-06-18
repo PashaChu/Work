@@ -12,17 +12,14 @@ public class AjaxController {
 
     private File _list;
 
-    AjaxController(String str){
-        this.setFile(str);
-    }
-
     @RequestMapping(value = "/like", method = RequestMethod.POST)
     @ResponseStatus
     public ResponseEntity<?> list(@RequestBody String Username) {
         try {
             String str = "myList.txt";
-            new AjaxController(str);
-            FileReader fr = new FileReader(getFile());
+            AjaxController control = new AjaxController();
+            control.setFile(str);
+            FileReader fr = new FileReader(control.getFile());
             try (Scanner scanner = new Scanner(fr)) {
                 String line;
                 while (scanner.hasNextLine()) {
