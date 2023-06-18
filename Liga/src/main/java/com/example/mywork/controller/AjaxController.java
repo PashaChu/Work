@@ -10,7 +10,7 @@ import java.util.Scanner;
 @CrossOrigin(origins = "http://localhost:8080")
 public class AjaxController {
 
-    private File _list;
+    private File list;
 
     @RequestMapping(value = "/like", method = RequestMethod.POST)
     @ResponseStatus
@@ -35,9 +35,9 @@ public class AjaxController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
     public void setFile(String str) {
-        this._list = new File(str);
+        this.list = new File(str);
     }
     public File getFile(){
-        return null;
+        return this.list;
     }
 }
