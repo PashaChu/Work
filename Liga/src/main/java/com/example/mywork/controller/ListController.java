@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 @Controller
-@CrossOrigin(origins = "http://*:8081")
+@CrossOrigin(origins = "http://localhost:8080")
 public class ListController {
     @RequestMapping(value = "/list", method= RequestMethod.GET)
     public String readmodel(Model model) {

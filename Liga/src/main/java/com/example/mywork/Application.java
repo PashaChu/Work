@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 @SpringBootApplication
-@CrossOrigin(origins = "http://*:8081")
+@CrossOrigin(origins = "http://localhost:8080")
 public class Application {
 
 	public static void main(String[] args) {
